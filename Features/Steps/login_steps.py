@@ -23,13 +23,15 @@ def step_user_enters_credentials(context):
 def step_user_logged_in_or_sees_another_session_page(context):
     try:
         login_with_session(context)
-        success_message = context.driver.find_element(By.XPATH, "//h4[normalize-space()='Product Selection']").text
-        assert LoginVariable.product_selection_title in success_message
+        message = context.driver.find_element(By.XPATH, "//h4[normalize-space()='Product Selection']").text
+        verify_text(context,message)
+
 
     except:
         # Handle the exception (if needed)
         context.wait.until(EC.visibility_of_element_located((By.XPATH, "//h4[normalize-space()='Product Selection']")))
-        success_message = context.driver.find_element(By.XPATH, "//h4[normalize-space()='Product Selection']").text
-        assert LoginVariable.product_selection_title in success_message
+        message = context.driver.find_element(By.XPATH, "//h4[normalize-space()='Product Selection']").text
+        verify_text(context,message)
+
 
 
