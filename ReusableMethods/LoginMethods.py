@@ -9,19 +9,19 @@ from Elements.LoginElement import *
 def open_url(context):
     context.driver.get(LoginVariable.application_url)
     context.wait = WebDriverWait(context.driver, 10)
-    context.wait.until(EC.visibility_of_element_located((By.NAME, LoginElement.login_email_textbox)))
+    context.wait.until(EC.visibility_of_element_located((By.ID, LoginElement.login_email_textbox)))
 
 
 def enter_email(context, email):
-    context.driver.find_element(By.NAME, LoginElement.login_email_textbox).send_keys(email)
+    context.driver.find_element(By.ID, LoginElement.login_email_textbox).send_keys(email)
 
 
 def enter_password(context, password):
-    context.driver.find_element(By.NAME, LoginElement.login_password_textbox).send_keys(password)
+    context.driver.find_element(By.ID, LoginElement.login_password_textbox).send_keys(password)
 
 
 def login_click_button(context):
-    context.driver.find_element(By.NAME, LoginElement.login_button).click()
+    context.driver.find_element(By.ID, LoginElement.login_button).click()
 
 
 def login_with_session(context):
