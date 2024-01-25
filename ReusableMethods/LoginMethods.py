@@ -13,7 +13,10 @@ def open_url(context):
 
 
 def enter_email(context, email):
-    context.driver.find_element(By.ID, LoginElement.login_email_textbox).send_keys(email)
+
+        context.driver.find_element(By.ID, LoginElement.login_email_textbox).send_keys(email)
+
+
 
 
 def enter_password(context, password):

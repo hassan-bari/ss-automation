@@ -11,10 +11,10 @@ def step_user_on_login_page(context):
     open_url(context)
 
 
-@when('the user enters valid username and password')
+@when('the tenant enters valid username and password')
 def step_user_enters_credentials(context):
 
-    enter_email(context,LoginVariable.login_email_address)
+    enter_email(context,LoginVariable.tenant_login_email_address)
     enter_password(context,LoginVariable.login_password)
     login_click_button(context)
 
