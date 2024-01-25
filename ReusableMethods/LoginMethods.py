@@ -31,3 +31,7 @@ def login_with_session(context):
                                                        LoginElement.login_continue_here)
     context.driver.find_element(By.XPATH, LoginElement.login_continue_here).click()
     context.wait.until(EC.visibility_of_element_located((By.XPATH, LoginElement.product_selection_heading)))
+
+def verify_text(context,message):
+    assert LoginVariable.product_selection_title in message
+
