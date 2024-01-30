@@ -1,9 +1,15 @@
+import time
+
 from behave import given, when, then
+from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+
+from Elements.ProductTypeElement import ProductTypeElements
 from GlobalVariables.LoginVariables import *
 from ReusableMethods.LoginMethods import *
+
 
 
 @given('the user is on the login page')
